@@ -81,7 +81,7 @@ if __name__ == "__main__":
         # convert integers back to SMILES
         molecules = []
         sampled_ints = sampled_ints.tolist()
-        print(sampled_ints)
+        #print(sampled_ints)
         for ints in sampled_ints:
             molecule = []
             for x in ints:
