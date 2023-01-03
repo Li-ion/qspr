@@ -1,0 +1,11 @@
+numpy
+pyyaml
+scipy
+ipython
+mkl
+scikit-learn
+six
+pytest
+pytest-cov
+selfies
+
