@@ -52,7 +52,7 @@ node_attributes['atom_element'] = Attribute('node', 'atom_element',
 
 
 from openchem.data.utils import read_smiles_property_file
-data = read_smiles_property_file('datasets/melt_temp/melting_data.txt',
+data = read_smiles_property_file('datasets/melting_data.txt',
                                  cols_to_read=[0, 1], delimiter='\t',
                                  keep_header=False)
 
@@ -79,19 +79,19 @@ def rmse_tmelt(target, predicted, std=train_std):
     return rmse
 
 from openchem.data.utils import save_smiles_property_file
-save_smiles_property_file('./datasets/melt_temp/train.smi', X_train, y_train.reshape(-1, 1))
-save_smiles_property_file('./datasets/melt_temp/test.smi', X_test, y_test.reshape(-1, 1))
+save_smiles_property_file('./datasets/train.smi', X_train, y_train.reshape(-1, 1))
+save_smiles_property_file('./datasets/test.smi', X_test, y_test.reshape(-1, 1))
 
 
 train_dataset = GraphDataset(get_atomic_attributes, node_attributes,
-                             './datasets/melt_temp/train.smi',
+                             './datasets/train.smi',
                              delimiter=',', cols_to_read=[0, 1])
 test_dataset = GraphDataset(get_atomic_attributes, node_attributes,
-                             './datasets/melt_temp/test.smi',
+                             './datasets/test.smi',
                              delimiter=',', cols_to_read=[0, 1])
 
 predict_dataset = GraphDataset(get_atomic_attributes, node_attributes,
-                               './logs/tmelt_gcnn_logs/sampled_molecules.txt',
+                               './datasets/test.smi',
                                delimiter=',', cols_to_read=[0],
                                return_smiles=True)
 
@@ -103,7 +103,7 @@ model_params = {
     'use_clip_grad': False,
     'batch_size': 256,
     'num_epochs': 200,
-    'logdir': 'logs/tmelt_gcnn_logs',
+    'logdir': 'run/task2',
     'print_every': 10,
     'save_every': 10,
     'train_data_layer': train_dataset,
