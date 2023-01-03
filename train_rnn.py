@@ -84,7 +84,7 @@ if __name__ == "__main__":
     )
     print('device: ', device)
 
-    config_dir = "./train.yaml"
+    config_dir = "./configs/rnn.yaml"
     with open(config_dir, 'r') as f:
         config = yaml.full_load(f)
 
