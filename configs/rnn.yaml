@@ -1,6 +1,6 @@
 ---
  out_dir: './run/task1/'
- dataset_dir: "./dataset/molecules_cleaned.smi" 
+ dataset_dir: "./datasets/molecules_cleaned.smi" 
  which_vocab: "selfies" # "selfies", "regex", or "char"
  vocab_path: "./vocab/selfies.yaml"
  percentage: 1
