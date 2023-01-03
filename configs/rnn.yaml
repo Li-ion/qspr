@@ -1,8 +1,8 @@
 ---
- out_dir: './results/run_38_char/'
- dataset_dir: "./dataset/CHO_only2.smi" 
+ out_dir: './run/task1/'
+ dataset_dir: "./dataset/molecules_cleaned.smi" 
  which_vocab: "selfies" # "selfies", "regex", or "char"
- vocab_path: "./vocab/CHO_only.yaml"
+ vocab_path: "./vocab/selfies.yaml"
  percentage: 1
 
  rnn_config:
@@ -20,7 +20,7 @@
 
  batch_size: 512
  shuffle: True
- num_epoch: 10
+ num_epoch: 200
  which_optimizer: adam
  learning_rate: 0.001
  weight_decay: 0.0001
