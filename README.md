@@ -26,7 +26,7 @@ conda install pytorch torchvision -c pytorch
 
 **Generative model training for task 1:**
 
-The configuration for RNN and clarification of parameters in task 1 is tabulated in Script 3 and Table 1. One can twick other hyper-parameters in ‘rnn.yaml’ to optimize the loss value.  The training will start through following command. 
+One can twick other hyper-parameters in ‘rnn.yaml’ to optimize the loss value.  The training will start through following command. 
 ```
 MKL_SERVICE_FORCE_INTEL=1
 MKL_THREADING_LAYER=GNU
